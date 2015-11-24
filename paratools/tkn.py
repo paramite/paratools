@@ -37,6 +37,7 @@ import struct
 CONF_PATH = '~/.config/paratools/tkn.conf'
 CNT_PATH = '~/.config/paratools/.tkn_counter'
 
+
 @click.command()
 def tkn():
     """Prints IP address of libvirt VM. If name of VM is not given as argument

@@ -15,8 +15,9 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'vmip = paratools.vmip:vmip',
             'tkn = paratools.tkn:tkn',
+            'vmip = paratools.vmip:vmip',
+            'vmprep = paratools.vmprep:vmprep',
         ],
     }
 )
