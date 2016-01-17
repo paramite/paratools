@@ -60,7 +60,7 @@ def vmprep(regex, images, domain, steps):
             'virt-sysprep '
                 '--hostname "{hostname}.{domain}" '
                 '--enable "{steps}" '
-                '-a {images}/{img}',
+                '-a {images}/{img}'.format(**locals()),
             can_fail=False
         )
         if rc:
