@@ -18,6 +18,7 @@ setup(
             'tkn = paratools.tkn:tkn',
             'vmip = paratools.vmip:vmip',
             'vmprep = paratools.vmprep:vmprep',
+            'vmclone = paratools.vmclone:vmclone',
         ],
     }
 )
