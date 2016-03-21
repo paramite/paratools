@@ -19,6 +19,7 @@ setup(
             'vmip = paratools.vmip:vmip',
             'vmprep = paratools.vmprep:vmprep',
             'vmclone = paratools.vmclone:vmclone',
+            'vmdel = paratools.vmdel:vmdel',
         ],
     }
 )
