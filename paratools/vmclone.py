@@ -38,8 +38,8 @@ from paratools import utils
         'from the same dirname as has template image and from new VM name'
     )
 )
-@click.argument('template', required=False)
-@click.argument('name', required=False)
+@click.argument('template', required=True)
+@click.argument('name', required=True)
 def vmclone(template, name, image):
     """Clones VM using virt-clone and performs necessary additiona steps.
     Takes name of template VM and name of new VM as arguments.
