@@ -15,6 +15,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
+            'ghrepo = paratools.ghrepo:ghrepo',
             'tkn = paratools.tkn:tkn',
             'vmip = paratools.vmip:vmip',
             'vmprep = paratools.vmprep:vmprep',
