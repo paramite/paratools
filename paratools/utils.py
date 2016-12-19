@@ -22,6 +22,8 @@ def execute(cmd, workdir=None, can_fail=True):
         stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
     out, err = proc.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
 
     if proc.returncode and can_fail:
         raise ExecutionError('Failed to execute command: %s' % cmd,
