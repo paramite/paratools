@@ -23,6 +23,7 @@
 #
 
 import base64
+import binascii
 import click
 try:
     import configparser
@@ -56,12 +57,16 @@ def tkn():
 
     try:
         key = base64.b32decode(secret, True)
-    except TypeError:
+    except (TypeError, binascii.Error):
         secret += "=" * ((8 - len(secret) % 8) % 8)
         key = base64.b32decode(secret, True)
     msg = struct.pack(">Q", counter)
     h = hmac.new(key, msg, hashlib.sha1).digest()
-    o = ord(h[19]) & 15
+    try:
+        char = ord(h[19])
+    except TypeError: # py3
+        char = h[19]
+    o = char & 15
     token = (struct.unpack(">I", h[o:o+4])[0] & 0x7fffffff) % 1000000
     token = str(token)
     if len(token) < 6:
