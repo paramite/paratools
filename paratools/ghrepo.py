@@ -33,7 +33,7 @@ from paratools import utils
 
 @click.command()
 @click.option('--user', prompt=True)
-@click.option('--password', prompt=True)
+@click.option('--password', prompt=True, hide_input=True)
 @click.argument('org', required=True)
 @click.argument('name', required=True)
 def ghrepo(org, name, user=None, password=None):
